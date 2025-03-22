@@ -2,7 +2,6 @@ package ObserverPattern;
 
 public class ObserverTest {
     public static void main(String[] args) {
-
         MyTopic topic = new MyTopic();
 
         Observer obj1 = new MyTopicSubscriber("Obj1");
@@ -17,8 +16,14 @@ public class ObserverTest {
         obj2.setSubject(topic);
         obj3.setSubject(topic);
 
+        MyTopic topic1 = new MyTopic();
+
         obj1.update();
 
         topic.postMessage("New Message");
+
+        obj1.update();
+
+        topic.postMessage("New Message 1");
     }
 }

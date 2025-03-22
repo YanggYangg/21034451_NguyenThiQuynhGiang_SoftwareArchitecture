@@ -1,0 +1,11 @@
+Ex1
+Khi giá của một cổ phiếu thay đổi,
+các nhà đầu tư đã đăng ký để theo dõi cổ phiếu đó sẽ nhận thông báo ngay lập tức về sự thay đổi.
+
+Ex2
+Trong một dự án phần mềm, khi có sự thay đổi về tình trạng hoặc trạng thái công việc (task),
+các thành viên trong nhóm sẽ nhận được thông báo tự động để theo dõi tiến độ.
+
+Áp dụng Observer Pattern vào các trường hợp trên
+Yêu cầu: vẽ sơ đồ trước khi code
+
