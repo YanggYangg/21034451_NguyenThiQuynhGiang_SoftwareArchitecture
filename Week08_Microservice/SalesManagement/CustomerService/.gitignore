@@ -1,0 +1,15 @@
+# Bỏ qua thư mục config chứa thông tin nhạy cảm
+CustomerService/config/
+
+# Bỏ qua file môi trường
+.env
+
+# Bỏ qua các file node modules
+node_modules/
+
+# Bỏ qua log file
+*.log
+
+# Bỏ qua file cấu hình hệ điều hành
+.DS_Store
+Thumbs.db
