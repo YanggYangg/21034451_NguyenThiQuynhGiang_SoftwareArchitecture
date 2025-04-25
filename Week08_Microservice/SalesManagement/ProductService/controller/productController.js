@@ -30,8 +30,21 @@ exports.getProductById = async (req, res) => {
 };
 
 exports.updateProduct = async (req, res) => {
-  try {
-    const updated = await Product.findByIdAndUpdate(req.params.id, req.body, { new: true });
+  try{
+    const { quantity } = req.body;
+    let inStock = true;
+
+    if(quantity === 0) {
+      inStock = false;
+    }
+
+    const updated = await Product.findByIdAndUpdate(
+      req.params.id,
+      { inStock: inStock, ...req.body },
+      { new: true }
+    );
+
+    console.log('Update product: ', updated);
     res.status(200).json(updated);
   } catch (err) {
     res.status(500).json({ error: err.message });

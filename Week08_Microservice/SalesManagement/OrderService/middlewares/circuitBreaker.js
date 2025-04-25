@@ -1,15 +1,16 @@
 const CircuitBreaker = require("opossum");
 const axios = require("axios");
 
+//Lay ttin sp tu ProductService
 const fetchProduct = (id) => axios.get(`http://localhost:3001/api/products/${id}`);
 
 
 //CLOSE -> OPEN -> HALF -> OPEN -> CLOSED
 const breaker = new CircuitBreaker(fetchProduct, {
   timeout: 5000,
-  errorThresholdPercentage: 50,//% bug sau do open 50%
-  resetTimeout: 10000,
-  maxRetries: 3,
+  errorThresholdPercentage: 50,// 50% req bug => Open
+  resetTimeout: 10000, //sau 10s chuyen sang Half-Open de thu goi lai
+  maxRetries: 3,// so lan thu
   backoff: [500, 1000, 2000]//500ms, 1s, 2s
 });
 
